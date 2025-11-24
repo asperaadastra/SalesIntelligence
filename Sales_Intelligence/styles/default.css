@@ -1,0 +1,165 @@
+/* ----------------------------- */
+/* GLOBAL LAYOUT & BACKGROUND    */
+/* ----------------------------- */
+
+body, .stApp {
+    background: #f5f6fa !important;
+    font-family: "Inter", sans-serif !important;
+    color: #1a1a1a !important;
+}
+
+/* ----------------------------- */
+/* PAGE TITLE / HEADER STYLING   */
+/* ----------------------------- */
+
+.stApp > header {
+    background: transparent !important;
+}
+
+h1, h2, h3 {
+    font-weight: 700 !important;
+    color: #131722 !important;
+}
+
+/* Company Header Banner */
+.company-header {
+    width: 100%;
+    padding: 22px 30px;
+    background: white;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 26px;
+    font-weight: 800;
+    color: #2b3640;
+    letter-spacing: 0.3px;
+}
+
+/* ----------------------------- */
+/* CONTAINERS / CARDS            */
+/* ----------------------------- */
+
+.stMarkdown, .stDataFrame, .css-1d391kg, .stPlotlyChart, .stAltairChart, .stMetric {
+    background: white !important;
+    padding: 22px !important;
+    border-radius: 16px !important;
+    border: 1px solid #e8e8e8 !important;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Make charts blend in */
+.css-1kyxreq, .css-1ht1j8u {
+    background: transparent !important;
+}
+
+/* ----------------------------- */
+/* SIDEBAR                       */
+/* ----------------------------- */
+
+section[data-testid="stSidebar"] {
+    background: #ffffff !important;
+    border-right: 1px solid #e4e4e4 !important;
+    padding-top: 20px;
+}
+
+section[data-testid="stSidebar"] .css-1d391kg {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+/* Sidebar title */
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    padding: 10px;
+    color: #333;
+}
+
+/* Sidebar buttons */
+.stButton > button {
+    background-color: #4b8df8 !important;
+    color: white !important;
+    border-radius: 10px !important;
+    padding: 10px 20px !important;
+    border: none !important;
+    font-size: 16px !important;
+}
+.stButton > button:hover {
+    background-color: #3a78d9 !important;
+}
+
+/* ----------------------------- */
+/* INPUTS / WIDGETS              */
+/* ----------------------------- */
+
+.stTextInput > div > div > input,
+.stSelectbox div[data-baseweb="select"] {
+    background: white !important;
+    border-radius: 10px !important;
+    border: 1px solid #dcdcdc !important;
+}
+
+.stTextInput > div > div > input:focus {
+    border: 1px solid #4b8df8 !important;
+    box-shadow: 0 0 0 2px rgba(75, 141, 248, 0.3) !important;
+}
+
+/* ----------------------------- */
+/* METRIC CARDS                  */
+/* ----------------------------- */
+
+.metric-card {
+    background: #ffffff !important;
+    padding: 20px !important;
+    border-radius: 16px !important;
+    text-align: center !important;
+    border: 1px solid #e9e9e9 !important;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05) !important;
+}
+.metric-card h3 {
+    font-weight: 600;
+    color: #4b4b4b;
+}
+.metric-card .metric-value {
+    font-size: 32px;
+    font-weight: 800;
+    color: #2b57f0;
+}
+
+/* ----------------------------- */
+/* TABLES                        */
+/* ----------------------------- */
+
+.dataframe tbody tr:hover {
+    background-color: #f1f3f8 !important;
+}
+
+.dataframe th {
+    background-color: #eef1f6 !important;
+    font-weight: 700 !important;
+}
+
+/* ----------------------------- */
+/* MAIN BUTTONS / ACTION ELEMENTS*/
+/* ----------------------------- */
+
+.stDownloadButton > button,
+.main-btn {
+    background: #2b57f0 !important;
+    color: white !important;
+    padding: 12px 24px !important;
+    border-radius: 12px !important;
+    border: none !important;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    cursor: pointer;
+}
+.main-btn:hover {
+    background: #2348c7 !important;
+}
+
+/* ----------------------------- */
+/* FOOTER                        */
+/* ----------------------------- */
+
+footer {
+    visibility: hidden;
+}
