@@ -34,20 +34,20 @@ def load_about_page():
 
     with col2:
         st.image("photo_2025-11-24 11.53.50 PM.jpeg", caption="Ruziev Ratmir")
-        st.write("• IBT Student")
+        st.write("•IBT Student")
 
     with col3:
         st.image("photo_2025-11-24 11.53.55 PM.jpeg", caption="Hamrokulov Niyozbek")
-        st.write("• IBT Student")
+        st.write("•IBT Student")
     with col4:
         st.image("photo_2025-11-24 11.53.52 PM.jpeg", caption="Murodullaev Abubakr ")
-        st.write("• ISE Student")
+        st.write("•ISE Student")
     with col5:
         st.image("hoto_2025-11-25 12.12.26 AM.jpeg", caption="Podolak Florian")
-        st.write("• Exchange Student")
+        st.write("•Exchange Student")
     with col6:
         st.image("photo_2025-11-24 11.53.57 PM.jpeg", caption="Purev Nomin")
-        st.write("• IBT Student")
+        st.write("•IBT Student")
     
     st.markdown("---")
 
