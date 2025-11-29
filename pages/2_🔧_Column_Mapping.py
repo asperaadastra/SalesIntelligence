@@ -1,12 +1,45 @@
 import streamlit as st
 import pandas as pd
 
+# TEMPORARY FIX - Add this right after imports
+st.markdown("""
+<style>
+/* Force dropdown visibility and proper width */
+.stSelectbox {
+    width: 100% !important;
+}
+
+div[data-baseweb="select"] > div {
+    width: 100% !important;
+    min-width: 400px !important;
+}
+
+div[data-baseweb="popover"] {
+    width: 100% !important;
+    min-width: 400px !important;
+    background: white !important;
+}
+
+div[data-baseweb="popover"] div {
+    color: #2c3e50 !important;
+    background: white !important;
+    white-space: normal !important;
+    padding: 12px !important;
+}
+
+div[data-baseweb="select"] > div > div > div {
+    color: #2c3e50 !important;
+}
+</style>
+""", unsafe_allow_html=True)
+
 def load_css_file(file_path="styles/default.css"):
     with open(file_path, "r") as f:
         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 load_css_file()
 
+# Rest of your page2.py code...
 st.title("🔧 Column Mapping")
 
 if "raw_df" not in st.session_state:
@@ -21,14 +54,23 @@ columns = df.columns.tolist()
 
 st.write("Match your CSV columns to app fields:")
 
-date_col = st.selectbox("Date column:", columns)
-item_col = st.selectbox("Item name column:", columns)
-qty_col = st.selectbox("Quantity column:", columns)
-price_col = st.selectbox("Unit price column:", columns)
-category_col = st.selectbox("Category column:", columns)
-stock_col = st.selectbox("Stock column (optional):", ["None"] + columns)
+# You can also add some debugging info
+st.write(f"📋 Available columns: {', '.join(columns)}")
 
-if st.button("Save Mapping"):
+# Create columns for better layout
+col1, col2 = st.columns(2)
+
+with col1:
+    date_col = st.selectbox("Date column:", columns, key="date_col")
+    item_col = st.selectbox("Item name column:", columns, key="item_col")
+    qty_col = st.selectbox("Quantity column:", columns, key="qty_col")
+
+with col2:
+    price_col = st.selectbox("Unit price column:", columns, key="price_col")
+    category_col = st.selectbox("Category column:", columns, key="category_col")
+    stock_col = st.selectbox("Stock column (optional):", ["None"] + columns, key="stock_col")
+
+if st.button("💾 Save Mapping"):
     st.session_state["mapping"] = {
         "date": date_col,
         "item": item_col,
@@ -37,12 +79,4 @@ if st.button("Save Mapping"):
         "cat": category_col,
         "stock": None if stock_col == "None" else stock_col
     }
-    st.success("Mapping saved!")
-
-def load_page():
-    # Your existing page code here
-    pass
-
-# This allows the page to run both standalone and as module
-if __name__ == "__main__":
-    load_page()
+    st.success("✅ Mapping saved! You can now view the dashboard.")
