@@ -8,6 +8,10 @@ body, .stApp {
     color: #1a1a1a !important;
 }
 
+.main .block-container {
+    padding-top: 2.5rem !important;
+}
+
 /* ----------------------------- */
 /* PAGE TITLE / HEADER STYLING   */
 /* ----------------------------- */
@@ -37,7 +41,11 @@ h1, h2, h3 {
 /* CONTAINERS / CARDS            */
 /* ----------------------------- */
 
-.stMarkdown, .stDataFrame, .css-1d391kg, .stPlotlyChart, .stAltairChart, .stMetric {
+.stMarkdown,
+.stDataFrame,
+.stPlotlyChart,
+.stAltairChart,
+.stMetric {
     background: white !important;
     padding: 22px !important;
     border-radius: 16px !important;
@@ -45,8 +53,8 @@ h1, h2, h3 {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04) !important;
 }
 
-/* Make charts blend in */
-.css-1kyxreq, .css-1ht1j8u {
+[data-testid="stHorizontalBlock"] > div,
+[data-testid="stVerticalBlock"] > div {
     background: transparent !important;
 }
 
@@ -60,17 +68,32 @@ section[data-testid="stSidebar"] {
     padding-top: 20px;
 }
 
-section[data-testid="stSidebar"] .css-1d391kg {
+section[data-testid="stSidebar"] .stMarkdown {
     background: transparent !important;
     box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
 }
 
-/* Sidebar title */
-.sidebar-title {
-    font-size: 20px;
+/* Title */
+.sidebar-brand-title {
+    font-size: 18px;
     font-weight: 700;
-    padding: 10px;
-    color: #333;
+    color: #0B2E4E;
+    text-align: center;
+}
+
+.sidebar-brand-subtitle {
+    font-size: 13px;
+    color: #1e3a5f;
+    text-align: center;
+    margin-top: 2px;
+}
+
+.sidebar-separator {
+    margin-top: 10px;
+    margin-bottom: 6px;
+    border: 0.5px solid #c3d0e3;
 }
 
 /* Sidebar buttons */
@@ -84,6 +107,35 @@ section[data-testid="stSidebar"] .css-1d391kg {
 }
 .stButton > button:hover {
     background-color: #3a78d9 !important;
+}
+
+/* Sidebar navigation (pages) */
+[data-testid="stSidebarNav"] ul {
+    padding-top: 6px;
+}
+
+[data-testid="stSidebarNav"] ul li {
+    margin-bottom: 0.15rem;
+}
+
+[data-testid="stSidebarNav"] a {
+    border-radius: 12px;
+    padding: 0.35rem 0.75rem;
+    font-weight: 500;
+    font-size: 0.93rem;
+}
+
+[data-testid="stSidebarNav"] a:hover {
+    background-color: #e6efff;
+}
+
+[data-testid="stSidebarNav"] a[aria-current="page"] {
+    background-color: #1d4ed8;
+    color: white !important;
+}
+
+[data-testid="stSidebarNav"] a[aria-current="page"] svg {
+    color: white !important;
 }
 
 /* ----------------------------- */
@@ -152,7 +204,8 @@ section[data-testid="stSidebar"] .css-1d391kg {
     font-size: 16px !important;
     cursor: pointer;
 }
-.main-btn:hover {
+.main-btn:hover,
+.stDownloadButton > button:hover {
     background: #2348c7 !important;
 }
 
@@ -162,4 +215,43 @@ section[data-testid="stSidebar"] .css-1d391kg {
 
 footer {
     visibility: hidden;
+}
+
+
+.chat-fab-wrapper {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+}
+
+.chat-fab-wrapper .stButton > button {
+    width: 56px;
+    height: 56px;
+    border-radius: 999px !important;
+    font-size: 24px !important;
+    padding: 0 !important;
+    background: #2563eb !important;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35) !important;
+}
+
+.chat-panel {
+    position: fixed;
+    bottom: 96px;
+    right: 24px;
+    width: 380px;
+    max-height: 70vh;
+    z-index: 9998;
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.35);
+    padding: 14px 16px 8px 16px;
+}
+
+.chat-panel .stMarkdown,
+.chat-panel .stDataFrame {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
 }
