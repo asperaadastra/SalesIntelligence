@@ -394,3 +394,109 @@ footer {
     font-weight: bold !important;
     content: "No Image" !important;
 }
+
+/* ----------------------------- */
+/* DROPDOWN & SELECT BOX FIXES  */
+/* ----------------------------- */
+
+/* Fix for selectbox text color */
+.stSelectbox > div > div > div {
+    color: #2c3e50 !important;
+}
+
+/* Fix for dropdown options visibility */
+div[data-baseweb="select"] > div {
+    color: #2c3e50 !important;
+    background-color: #f8fdff !important;
+}
+
+/* Dropdown menu options */
+div[data-baseweb="popover"] div {
+    color: #2c3e50 !important;
+    background-color: white !important;
+}
+
+/* Hover state for dropdown options */
+div[data-baseweb="popover"] div:hover {
+    background-color: #0099b5 !important;
+    color: white !important;
+}
+
+/* Selected option in dropdown */
+div[data-baseweb="popover"] div[aria-selected="true"] {
+    background-color: #1e8e3e !important;
+    color: white !important;
+}
+
+/* Fix for the select box input text */
+.stSelectbox input {
+    color: #2c3e50 !important;
+}
+
+/* Ensure dropdown container has proper background */
+div[data-baseweb="select"] div {
+    background-color: #f8fdff !important;
+}
+
+/* ----------------------------- */
+/* ENHANCED SELECT BOX STYLING  */
+/* ----------------------------- */
+
+/* Main select box */
+.stSelectbox > div > div {
+    background: #f8fdff !important;
+    border-radius: 8px !important;
+    border: 2px solid #0099b5 !important;
+    color: #2c3e50 !important;
+    font-size: 16px !important;
+    padding: 8px 12px !important;
+    min-height: 48px !important;
+}
+
+/* Dropdown menu */
+div[data-baseweb="popover"] {
+    background: white !important;
+    border: 2px solid #0099b5 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 4px 15px rgba(0, 153, 181, 0.2) !important;
+    margin-top: 5px !important;
+}
+
+/* Individual options */
+div[data-baseweb="popover"] div[role="option"] {
+    padding: 12px 16px !important;
+    font-size: 14px !important;
+    color: #2c3e50 !important;
+    border-bottom: 1px solid #e6f3ff !important;
+    transition: all 0.2s ease !important;
+}
+
+/* Remove last border */
+div[data-baseweb="popover"] div[role="option"]:last-child {
+    border-bottom: none !important;
+}
+
+/* Hover state */
+div[data-baseweb="popover"] div[role="option"]:hover {
+    background: linear-gradient(135deg, #0099b5, #007a99) !important;
+    color: white !important;
+    transform: translateX(5px);
+}
+
+/* Selected option */
+div[data-baseweb="popover"] div[aria-selected="true"] {
+    background: linear-gradient(135deg, #1e8e3e, #186a2e) !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+
+/* Dropdown arrow color */
+.stSelectbox > div > div > div > svg {
+    color: #0099b5 !important;
+}
+
+/* Focus state */
+.stSelectbox > div > div:focus-within {
+    border: 2px solid #ce1126 !important;
+    box-shadow: 0 0 0 3px rgba(206, 17, 38, 0.2) !important;
+}
