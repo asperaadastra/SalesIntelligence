@@ -38,3 +38,11 @@ if st.button("Save Mapping"):
         "stock": None if stock_col == "None" else stock_col
     }
     st.success("Mapping saved!")
+
+def load_page():
+    # Your existing page code here
+    pass
+
+# This allows the page to run both standalone and as module
+if __name__ == "__main__":
+    load_page()
