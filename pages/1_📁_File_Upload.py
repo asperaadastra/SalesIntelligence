@@ -20,3 +20,11 @@ if uploaded:
     st.session_state["raw_df"] = df
     st.success("File uploaded!")
     st.dataframe(df.head())
+
+def load_page():
+    # Your existing page code here
+    pass
+
+# This allows the page to run both standalone and as module
+if __name__ == "__main__":
+    load_page()
