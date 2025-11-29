@@ -4,9 +4,6 @@ import base64
 
 st.markdown('<div class="upload-page-pattern">', unsafe_allow_html=True)
 
-# Set background for this page
-set_background_image("ark_bukhara-e1690445501430.jpg")
-
 # Load your main CSS
 def load_css_file(file_path="styles/default.css"):
     with open(file_path, "r") as f:
