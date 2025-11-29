@@ -83,7 +83,7 @@ def main_app():
     # Page selection
     page = st.sidebar.radio(
         "Go to:",
-        ["🏠 Dashboard", "📁 Upload Data", "🔧 Column Mapping", "📈 Sales Dashboard", "🤖 Sales Prediction", "👥 About Us"],
+        ["🏠 Dashboard"],
         index=0
     )
     
