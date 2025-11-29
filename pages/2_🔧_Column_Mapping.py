@@ -1,33 +1,11 @@
 import streamlit as st
 import pandas as pd
 
-# TEMPORARY FIX - Remove all custom CSS for this page
-st.markdown("""
-<style>
-/* Remove all custom styling for selectboxes temporarily */
-.stSelectbox > div > div {
-    background: white !important;
-    border: 1px solid #ccc !important;
-    color: #31333F !important;
-}
+def load_css_file(file_path="styles/default.css"):
+    with open(file_path, "r") as f:
+        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
-div[data-baseweb="select"] div {
-    color: #31333F !important;
-    background: white !important;
-}
-
-div[data-baseweb="popover"] div {
-    color: #31333F !important;
-    background: white !important;
-}
-</style>
-""", unsafe_allow_html=True)
-
-# Don't load the main CSS file for now
-# def load_css_file(file_path="styles/default.css"):
-#     with open(file_path, "r") as f:
-#         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
-# load_css_file()
+load_css_file()
 
 st.title("🔧 Column Mapping")
 
@@ -54,7 +32,7 @@ with col2:
     category_col = st.selectbox("Category column:", columns, key="category_col")
     stock_col = st.selectbox("Stock column (optional):", ["None"] + columns, key="stock_col")
 
-if st.button("💾 Save Mapping"):
+if st.button("💾 Save Mapping", use_container_width=True):
     st.session_state["mapping"] = {
         "date": date_col,
         "item": item_col,
