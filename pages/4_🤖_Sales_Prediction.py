@@ -14,6 +14,8 @@ if "mapping" not in st.session_state:
     st.warning("Complete column mapping first.")
     st.stop()
 
+st.markdown('<div class="prediction-page-pattern">', unsafe_allow_html=True)
+
 mapping = st.session_state["mapping"]
 df = st.session_state["raw_df"].copy()
 
