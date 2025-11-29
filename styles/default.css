@@ -102,13 +102,43 @@ div[data-testid="stHorizontalBlock"] > div {
 /* DROPDOWN & SELECT BOX FIXES  */
 /* ----------------------------- */
 
-.stSelectbox {
-    width: 100% !important;
+/* Reset Streamlit selectbox to default first */
+.stSelectbox > div > div {
+    background-color: white !important;
+    border: 1px solid #ccc !important;
+    color: #31333F !important;
 }
 
+/* Selected value text */
+.stSelectbox > div > div > div {
+    color: #31333F !important;
+}
+
+/* Dropdown options */
+div[data-baseweb="select"] div {
+    color: #31333F !important;
+    background-color: white !important;
+}
+
+/* Dropdown popover menu */
+div[data-baseweb="popover"] {
+    background-color: white !important;
+    border: 1px solid #ccc !important;
+}
+
+div[data-baseweb="popover"] div {
+    color: #31333F !important;
+    background-color: white !important;
+}
+
+/* Hover state */
+div[data-baseweb="popover"] div:hover {
+    background-color: #f0f0f0 !important;
+    color: #31333F !important;
+}
+
+/* Now apply your theme carefully */
 .stSelectbox > div > div {
-    width: 100% !important;
-    min-width: 300px !important;
     background: #f8fdff !important;
     border-radius: 8px !important;
     border: 2px solid #0099b5 !important;
@@ -118,36 +148,21 @@ div[data-testid="stHorizontalBlock"] > div {
     min-height: 48px !important;
 }
 
-.stSelectbox > div > div > div,
-.stSelectbox input {
+.stSelectbox > div > div > div {
     color: #2c3e50 !important;
     font-weight: 500 !important;
-    white-space: nowrap !important;
-    overflow: hidden !important;
-    text-overflow: ellipsis !important;
-    max-width: 100% !important;
 }
 
 .stSelectbox > div > div > div > svg {
     color: #0099b5 !important;
 }
 
-.stSelectbox > div > div:focus-within {
-    border: 2px solid #ce1126 !important;
-    box-shadow: 0 0 0 3px rgba(206, 17, 38, 0.2) !important;
-    background: #ffffff !important;
-}
-
-/* Dropdown popover */
+/* Dropdown popover with theme */
 div[data-baseweb="popover"] {
-    width: 100% !important;
-    min-width: 350px !important;
-    max-width: 500px !important;
     background: white !important;
     border: 2px solid #0099b5 !important;
     border-radius: 8px !important;
     box-shadow: 0 4px 15px rgba(0, 153, 181, 0.2) !important;
-    margin-top: 5px !important;
 }
 
 div[data-baseweb="popover"] div[role="option"] {
@@ -156,12 +171,6 @@ div[data-baseweb="popover"] div[role="option"] {
     color: #2c3e50 !important;
     background-color: white !important;
     border-bottom: 1px solid #e6f3ff !important;
-    white-space: normal !important;
-    word-wrap: break-word !important;
-    min-height: 44px !important;
-    display: flex !important;
-    align-items: center !important;
-    transition: all 0.2s ease !important;
 }
 
 div[data-baseweb="popover"] div[role="option"]:last-child {
@@ -171,7 +180,6 @@ div[data-baseweb="popover"] div[role="option"]:last-child {
 div[data-baseweb="popover"] div[role="option"]:hover {
     background: linear-gradient(135deg, #0099b5, #007a99) !important;
     color: white !important;
-    transform: translateX(5px);
 }
 
 div[data-baseweb="popover"] div[aria-selected="true"] {
