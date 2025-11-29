@@ -4,7 +4,7 @@ import pandas as pd
 import streamlit as st
 from openai import OpenAI
 
-api_key = os.environ.get("OPENAI_API_KEY")
+api_key = "sk-proj--Oy0A3EBYPtSH9sx-ft77q4Hp68XDtLXsul3qKc71m9WlRdNWyowhiFVJ-2ANmqMo20oAUY4Y1T3BlbkFJKGHo1dlRE1Oa_lI_mxBUutXinqFOC3CvivJ5iXQGB7dIKr2tPQ3tVQ5xNnJpZfhvFb4NMuxSkAY"
 if not api_key:
     st.error("OPENAI_API_KEY is not defined in the environment variables.")
     raise RuntimeError("Missing OPENAI_API_KEY")
