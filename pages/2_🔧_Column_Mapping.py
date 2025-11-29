@@ -1,45 +1,34 @@
 import streamlit as st
 import pandas as pd
 
-# TEMPORARY FIX - Add this right after imports
+# TEMPORARY FIX - Remove all custom CSS for this page
 st.markdown("""
 <style>
-/* Force dropdown visibility and proper width */
-.stSelectbox {
-    width: 100% !important;
+/* Remove all custom styling for selectboxes temporarily */
+.stSelectbox > div > div {
+    background: white !important;
+    border: 1px solid #ccc !important;
+    color: #31333F !important;
 }
 
-div[data-baseweb="select"] > div {
-    width: 100% !important;
-    min-width: 400px !important;
-}
-
-div[data-baseweb="popover"] {
-    width: 100% !important;
-    min-width: 400px !important;
+div[data-baseweb="select"] div {
+    color: #31333F !important;
     background: white !important;
 }
 
 div[data-baseweb="popover"] div {
-    color: #2c3e50 !important;
+    color: #31333F !important;
     background: white !important;
-    white-space: normal !important;
-    padding: 12px !important;
-}
-
-div[data-baseweb="select"] > div > div > div {
-    color: #2c3e50 !important;
 }
 </style>
 """, unsafe_allow_html=True)
 
-def load_css_file(file_path="styles/default.css"):
-    with open(file_path, "r") as f:
-        st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+# Don't load the main CSS file for now
+# def load_css_file(file_path="styles/default.css"):
+#     with open(file_path, "r") as f:
+#         st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+# load_css_file()
 
-load_css_file()
-
-# Rest of your page2.py code...
 st.title("🔧 Column Mapping")
 
 if "raw_df" not in st.session_state:
@@ -47,14 +36,9 @@ if "raw_df" not in st.session_state:
     st.stop()
 
 df = st.session_state["raw_df"]
-
-st.markdown('<div class="mapping-page-pattern">', unsafe_allow_html=True)
-
 columns = df.columns.tolist()
 
 st.write("Match your CSV columns to app fields:")
-
-# You can also add some debugging info
 st.write(f"📋 Available columns: {', '.join(columns)}")
 
 # Create columns for better layout
