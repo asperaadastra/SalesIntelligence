@@ -36,3 +36,11 @@ month = st.slider("Month (1–12)", 1, 12)
 pred = model.predict([[day, month]])[0]
 
 st.write(f"### Predicted Sales for Day {day}, Month {month}: **${pred:,.2f}**")
+
+def load_page():
+    # Your existing page code here
+    pass
+
+# This allows the page to run both standalone and as module
+if __name__ == "__main__":
+    load_page()
