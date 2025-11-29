@@ -50,3 +50,11 @@ st.line_chart(daily_sales)
 st.subheader("🗂 Sales by Category")
 cat_sales = df.groupby(mapping["cat"])["Revenue"].sum()
 st.bar_chart(cat_sales)
+
+def load_page():
+    # Your existing page code here
+    pass
+
+# This allows the page to run both standalone and as module
+if __name__ == "__main__":
+    load_page()
